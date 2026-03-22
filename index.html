@@ -55,16 +55,17 @@
             --content-gap: clamp(0.8rem, 2vw, 2rem);
             --element-gap: clamp(0.35rem, 1vw, 1rem);
 
-            --bg: #0a0a0a;
-            --surface: #131313;
+            --bg: #080808;
+            --surface: #161616;
+            --surface-hover: #1e1e1e;
             --gold: #D4A853;
-            --gold-faint: rgba(212, 168, 83, 0.08);
+            --gold-faint: rgba(212, 168, 83, 0.1);
             --terra: #C75E3A;
             --ivory: #F5F0E8;
-            --muted: #5a5a5a;
-            --muted-2: #888;
-            --border: rgba(212, 168, 83, 0.18);
-            --border-dark: rgba(245, 240, 232, 0.06);
+            --muted: #777;
+            --muted-2: #aaa;
+            --border: rgba(212, 168, 83, 0.22);
+            --border-dark: rgba(245, 240, 232, 0.1);
         }
 
         /* ===========================================
@@ -92,8 +93,8 @@
         .body-text {
             font-family: 'Space Grotesk', sans-serif;
             font-size: var(--body-size);
-            color: rgba(245, 240, 232, 0.65);
-            line-height: 1.6;
+            color: rgba(245, 240, 232, 0.85);
+            line-height: 1.75;
         }
 
         .label {
@@ -120,19 +121,29 @@
         }
 
         .nav-dot {
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: rgba(245, 240, 232, 0.18);
+            background: rgba(245, 240, 232, 0.25);
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
             padding: 0;
         }
 
+        .nav-dot:hover {
+            background: rgba(212, 168, 83, 0.6);
+            transform: scale(1.4);
+        }
+
         .nav-dot.active {
             background: var(--gold);
-            transform: scale(1.7);
+            transform: scale(1.8);
+        }
+
+        .nav-dot:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
         }
 
         .slide-counter {
@@ -170,7 +181,7 @@
             font-family: 'Cormorant', serif;
             font-size: clamp(14rem, 42vw, 36rem);
             font-weight: 700;
-            color: rgba(212, 168, 83, 0.04);
+            color: rgba(212, 168, 83, 0.07);
             position: absolute;
             right: calc(-1 * clamp(1rem, 3vw, 4rem));
             bottom: calc(-1 * clamp(2rem, 6vw, 5rem));
@@ -185,16 +196,17 @@
         .card {
             background: var(--surface);
             border: 1px solid var(--border-dark);
-            border-radius: 3px;
-            padding: clamp(0.7rem, 1.8vw, 1.4rem);
+            border-radius: 4px;
+            padding: clamp(0.75rem, 1.8vw, 1.4rem);
+            transition: background 0.2s ease, border-color 0.2s ease;
         }
-        .card-gold { border-color: rgba(212,168,83,0.25); }
+        .card-gold { border-color: rgba(212,168,83,0.3); }
 
         .insight-strip {
-            background: var(--gold-faint);
+            background: rgba(212, 168, 83, 0.07);
             border-left: 2px solid var(--gold);
-            padding: clamp(0.55rem, 1.4vw, 1.1rem) clamp(0.75rem, 1.8vw, 1.4rem);
-            border-radius: 0 3px 3px 0;
+            padding: clamp(0.6rem, 1.5vw, 1.2rem) clamp(0.8rem, 2vw, 1.5rem);
+            border-radius: 0 4px 4px 0;
         }
 
         .stat-number {
@@ -208,9 +220,9 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: var(--small-size);
             color: var(--muted-2);
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-top: 0.2rem;
+            margin-top: 0.3rem;
         }
 
         .pill {
